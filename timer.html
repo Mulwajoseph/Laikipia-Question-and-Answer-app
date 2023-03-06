@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zalego Students Hackathom</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/w3v3.css">
+	<link rel="stylesheet" type="text/css" href="css/css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="css/qaforumstyles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+	body{
+		background-color: #ebf0fa;
+		font-family: calibri;
+	}
+		.jumbotron{
+			background: #004466;
+	
+background: -webkit-linear-gradient(left, #004466 , #006699); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #004466, #006699); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #004466, #006699); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #004466 , #006699); /* Standard syntax */
+		}
+		#counter{
+			position: relative;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: reverse; /* Chrome, Safari, Opera */
+    -webkit-animation: example 5s linear 2s infinite alternate;
+    animation-name: example 5s linear 2s infinite alternate;;
+      
+		}
+		@-webkit-keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+#clockdisplayDesktop{
+	color:white;
+}
+	</style>
+
+</head>
+<body>
+<div class="jumbotron">
+	
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top:-30px;">
+  
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  	<div class="item active">
+    <h1 class="text-center w3-text-white">Zalego Students Coding Hackathom<br></h1>
+    </div>
+
+    <div class="item">
+     <h1 class="text-center w3-text-white">Never loved coding than i do today<br></h1>
+    </div>
+
+    <div class="item">
+      <h1 class="text-center w3-text-white">People Think it is magic, its not<br></h1>
+    </div>
+
+    <div class="item">
+      <h1 class="text-center w3-text-white">You feel the code flow with the rythm<br></h1>
+    </div>
+  </div>
+
+ 
+</div>
+
+
+</div>
+<center>
+	<div class="alert alert-info w3-card-8" style="background-color: red; max-width: 420px; margin-top: -23px;">
+		<h1 class="text-center w3-text-white ">Stop At : <b>4 : 50 : 00 Pm</b></h1>
+	</div>
+	</center>
+<center>
+<div class="alert alert-success" id="counter" style="max-width: 500px; background-color: #79d2a6;">
+	<center>
+	<img src="images/clock.png" width="58px" height="58px" style="margin-top:-36px; margin-left:5px;" alt="dashboard-icon" >&nbsp<span id = "clockdisplayDesktop" style="font-size: 60px; ">
+22:23PM
+</span>
+</center>
+</div>
+</center>
+
+
+	<script>
+function renderTimeDesktop() {
+
+                      var currentTime= new Date();
+                      var diem = "AM"
+                      var h = currentTime.getHours();
+                      var m = currentTime.getMinutes();
+                      var s = currentTime.getSeconds();
+
+
+                      if (h ==0){
+                          h = 12
+                      }   else if (h>12) {
+                          h = h - 12;
+                          diem = "PM";
+
+                      }
+
+                      if (h<10){
+                          h = "0" + h;
+
+                      }
+
+                      if (m<10){
+                          m = "0" + m;
+
+                      }
+
+                      if (s<10){
+                          s = "0" + s;
+
+                      }
+
+                      if(m==50 && h==4){
+                      	document.getElementById('alarm').play();
+                      	document.getElementById('timer').style.display="block";
+                      	
+                      }
+
+                      var myClock = document.getElementById('clockdisplayDesktop')
+                      myClock.textContent = h + ":" + m + ":" + s + " " + diem;
+                      myClock.innerText = h + ":" + m + ":" + s + " " + diem;
+                      setTimeout(renderTimeDesktop,1000);
+                      }
+
+
+                      renderTimeDesktop();
+
+                      //function to toggle accordion
+                       function accordion(id){
+                        document.getElementById(id).classList.toggle("w3-show");
+                      }
+                  </script>
+<div id="timer" class="w3-modal">
+  <div class="w3-modal-content">
+    
+    
+     <div class="panel panel-default">
+     	<div class="panel-heading">
+     		<h2 class="text-primary text-center">Zalego Students Coding BootCamp</h2>
+     	</div>
+     	<div class="panel-body">
+     		<h1 class="text-danger text-center">Time is Over Guys!!!, Kindly Allow me to Check you Projects</h1><br>
+     		<button class="btn btn-sm btn-danger" onclick="document.getElementById('timer').style.display='none'">Close</button>
+     	</div>
+     </div>
+  
+  </div>
+</div>
+ <audio controls id="alarm" loop style="display:none ;">
+  
+  <source src="images/sound2.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</body>
+</html>

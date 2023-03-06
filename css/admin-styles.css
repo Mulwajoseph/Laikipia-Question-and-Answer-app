@@ -1,0 +1,81 @@
+#right-nav li a{
+	color:white;
+}
+.addHostels-header{
+	margin-top: 3px;
+}
+.nav-tabs {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid #ddd;
+}
+.nav-tabs > li > a:hover {
+  border-color: #eee #eee gray;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #fff;
+  cursor: default;
+  background-color: #d9534f;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+#hostel-registration{
+margin-top: 10px;
+
+
+}
+.progress{
+	max-width: 50%;
+}
+#label2{
+	position: relative;
+	color:#337ab7;
+	font-size: 30px;
+	left:0.5%;
+	margin-top:-24%;
+
+}
+label{
+	color: gray;
+}
+.signup-error{
+	color:#d9534f;
+}
+#form h3{
+	color:#337ab7;
+}
+
+@media screen and (min-width: 480px) {
+    #label2 {
+       position: relative;
+	color:#337ab7;
+	font-size: 30px;
+	left:0.5%;
+	margin-top:-6%;
+    }
+}
+
+.loader{
+	position: relative;
+	top:70%;
+	border: 16px solid rgba(0, 0, 0, .15);
+	border-radius: 50%;
+	border-bottom: 16px solid #337ab7;
+	border-top:16px solid #337ab7;
+	width: 120px;
+	height: 120px;
+	-webkit-animation:spin 1s linear infinite;
+	animation:spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+
+@keyframes spin{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+

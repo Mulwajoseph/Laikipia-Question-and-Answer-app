@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question and Answer forum</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/w3v3.css">
+	<link rel="stylesheet" type="text/css" href="css/css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="css/qaforumstyles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/validations.js"></script>
+
+	<style type="text/css">
+		.error{
+			display: none;
+		}
+	</style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+	<!--navigation bar-->
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+
+	<!--progress div-->
+
+	<div id="progress"></div>
+	
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#"><b><img src="images/logo.png" id="logo" width="30px" height="30px">&nbspLaikipia University Quick Fix</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" id="list">
+        <li class="active"><a href="#home"><img src="images/home.png" alt="logo-icon" width="12px" height="12px" style="margin-top: -8.5px;">&nbspHome</a></li>
+      
+        <li><a href="#about"><img src="images/about.png" alt="logo-icon" width="17px" height="17px" style="margin-top: -8.5px;">&nbspGet to know us</a></li>  
+        <li><a href="#contact"><img src="images/contact.png" alt="logo-icon" width="17px" height="17px" style="margin-top: -8.5px;">&nbspGet in touch</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="list">
+         <li><a href="#" data-toggle="modal" data-target="#registerModal"><img src="images/register.png" alt="logo-icon" width="18px" height="18px" style="margin-top: -8.3px;">&nbspRegister</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#loginModal"><img src="images/login.png" alt="logo-icon" width="17px" height="17px" style="margin-top: -8.3px;">&nbspLogin</a></li>
+           
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br>
+
+<!--login modal-->
+<div class="modal fade" role="dialog" id="loginModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal">&times</button>
+				<h3 class="text-primary">Login form</h3>
+			</div>
+			<div class="modal-body">
+				<form method="POST" action="login.php" >
+					<div class="form-group">
+						<label>Email Address</label>
+						<input type="email" name="email" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" name="password" class="form-control">
+					</div>
+					<button class="btn btn-sm btn-primary" type="submit" name="submit">Login</button>&nbsp<button class="btn btn-sm btn-danger" type="reset">Reset</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!--register modal-->
+<div class="modal fade" role="dialog" id="registerModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" data-dismiss="modal">&times</button>
+				<h3 class="text-primary">Registration form</h3>
+			</div>
+			<div class="modal-body">
+	
+				<form method="POST" action="register.php" name="reg_form">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label>Firstname</label>
+								<input type="text" name="firstname"  class="form-control" id="firstname" >
+								
+								<span class="error firstname_error text-danger">Invalid name, only characters allowed</span>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label>Middlename</label>
+								<input type="text" name="middlename" class="form-control" id="middlename">
+
+								<span class="error middlename_error text-danger">Invalid name, only characters allowed</span>
+								
+								
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<label>Surname</label>
+								<input type="text" name="surname"  class="form-control" id="surname">
+
+								<span class="error surname_error text-danger">Invalid name, only characters allowed</span>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="form-group">
+						<label>Email Address:</label>
+						<input type="email" name="email" class="form-control" id="email">
+						<span class="error email_error text-danger">Invalid email address, should be like example@gmail.com</span>
+					</div>
+
+					<div class="form-group">
+						<label>Phone number:</label>
+
+						<div class="row">
+							<div class="col-xs-2">
+								<center>
+								<span class="btn btn-md btn-default text-primary">+254</span>
+							</center>
+							</div>
+							<div class="col-xs-10">
+						<input type="number" name="contact" class="form-control" id="contact" placeholder="7XXXXXX">
+					</div>
+						</div>
+
+					</div>
+
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" name="username" class="form-control" id="username">
+						<span class="error username_error text-danger">Invalid name, only characters allowed</span>
+					</div>
+
+					<div class="form-group">
+						<label>Gender:</label><br>
+						<label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
+						<label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
+					</div>
+
+					<div class="form-group">
+						<label>Password:</label>&nbsp<span class="btn btn-default btn-sm w3-text-white" id="strength" style="display: none; margin-bottom:3px;"></span>
+						<input type="password" class="form-control" name="password" id="password">
+						<span class="error password_error text-danger">Password too short,minimum of 6 characters</span>
+					</div>
+
+					<div class="form-group">
+						<label>Confirm Password:</label>
+						<input type="password" class="form-control" name="confirm_password" id="confirm_password">
+						<span class="error confirm_password_error text-danger">Password do not match</span>
+					</div>
+
+					<button class="btn btn-sm btn-primary" type="submit" name="submit" id="submit" style="display: none;">Submit</button>&nbsp<button class="btn btn-sm btn-danger" type="reset">Reset</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+<!--banner section and intro section-->
+<div class="container-fluid w3-light-gray" id="home">
+	<div class="row  w3-content w3-margin-top" style="max-width: 1200px;">
+		<div class="col-sm-6">
+			<div id="intro-text">
+			<h5>This is what we are</h5>
+			<h1><b>Laikipia University Quick Fix</b></h1><br>
+			<p>We are here to provide students with opportunities to interact, share content, discuss, participate actively in online technology and academic discussions and also prepare well for their future programming life.</p>
+		</div>
+		</div>
+		<div class="col-sm-6" id="intro-text">
+		<!-- banner image carousel-->
+<div class="carousel slide" id="myCarousel" data-ride="carousel">
+		<ol class="carousel-indicators" id="banner_image_indicators">
+			<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+			<li data-slide-to="1" data-target="#myCarousel"></li>
+			<li data-slide-to="2" data-target="#myCarousel"></li>
+			<li data-slide-to="3" data-target="#myCarousel"></li>
+		</ol>
+
+		<div class="carousel-inner" role="listbox">
+
+			<div class="item active">
+				<img src="images/21.jpg" class="w3-card-4 img-round" id="carousel_images" alt="image1">
+			</div>
+			<div class="item">
+				<img src="images/20.jpg" class="w3-card-4 img-round" id="carousel_images" alt="image2">
+			</div>
+			<div class="item">
+				<img src="images/17.jpg" class="w3-card-4 img-round" id="carousel_images" alt="image3">
+			</div>
+			<div class="item">
+				<img src="images/16.jpg" class="w3-card-4 img-round" id="carousel_images" alt="image4">
+			</div>
+		</div>
+
+		<a href="#myCarousel" id="carousel1-control" class="left carousel-control" role="button" data-slide="prev">
+			<img src="images/left.png"  width="30px" height="30px">
+		</a>
+		<a href="#myCarousel" id="carousel1-control" class="right carousel-control" role="button" data-slide="next">
+			<img src="images/right.png"  width="30px" height="30px">
+		</a>
+	</div>
+
+		</div>
+	</div><br>
+	<center><a href="#about" title="To about us">
+    <button class="btn btn-sm btn-danger w3-card-8"><i class="fa fa-arrow-down"></i></button>
+  </a></center><br>
+	</div>
+<br><br>
+
+
+<!--content section-->
+
+	<div class="container-fluid w3-content" id="about" style="max-width: 1100px;">
+		<h3 class="text-center" ><b >Get to know us</b></h3><br>
+		<p class="text-center">
+			Laikipia University Fix It is an online chat forum on which people of all backgrounds with all sorts of interests may post their opinions, comments, et cetera and then receive nearly immediate feedback from those who see their questions in their timeline. Participation, whether as a member, moderator, or owner, can help one achieve recognition within a tech community, and may even generate highly-qualified tech leads. Forums differ, however, in their treatment of self-promotion; some disallow any hint of self-promotion, some are geared specifically towards self-promotion, and many fall somewhere in between, limiting URL’s to an off-the-page member profile.
+
+		</p>
+	</div>
+<br><br>
+
+<!--feedback carousel-->
+
+	<div class="container-fluid" style="background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);" >
+		<div class="w3-content" style="max-width: 1100px;"><br>
+		<h3 class="text-center w3-margin-top w3-text-white"><b>Our happy clients feedback</b></h3><br>
+		<div id="myCarousel2" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel2" data-slide-to="1"></li>
+    <li data-target="#myCarousel2" data-slide-to="2"></li>
+    <li data-target="#myCarousel2" data-slide-to="3"></li>
+    <li data-target="#myCarousel2" data-slide-to="4"></li>
+    <li data-target="#myCarousel2" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  
+    <div class="carousel-inner" role="listbox">
+      <div class="item active"><br>
+      	<center>
+      	<img src="images/person1.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"This platform is the best, talk freedom is brought back to our hands"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Mary Njuguna</h4>
+      </div>
+
+      <div class="item"><br>
+      	<center>
+      	<img src="images/person2.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"Woow, i can now get to compete with others"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Darry</h4>
+      </div>
+
+      <div class="item"><br>
+      	<center>
+      	<img src="images/person1.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"Can't believe this guys were not here 10 years ago"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Doris Nyauma</h4>
+      </div>
+
+      <div class="item"><br>
+      	<center>
+      	<img src="images/person2.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"I love the transition being made by zalego fix it"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Noelian</h4>
+      </div><br>
+
+      <div class="item"><br>
+      	<center>
+      	<img src="images/person2.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"You gotta get into this, Crazy stuff in here"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Moses Mwenda</h4>
+      </div><br>
+
+      <div class="item"><br>
+      	<center>
+      	<img src="images/person2.png" class="w3-card-2 img-circle" id="logo" width="50px" height="50px">
+      </center><br>
+        <p class="text-center" style="font-size: 16px; color:white;"><em>"Wololo, umm kinda, this is cool, this awsome, this is hooot!! i like it"</em></p>
+        <h4 class="text-center" style="color:#506985; color:white;">Cathy</h4>
+      </div><br>
+<center >
+<a href="#myCarousel2" role="button"  data-slide="prev"><img src="images/left.png"  width="30px" height="30px"></a>&nbsp&nbsp&nbsp&nbsp<a  href="#myCarousel2" role="button" data-slide="next"><img src="images/right.png"  width="30px" height="30px"></a>
+</center>
+
+    </div><br><br><br>
+	</div>
+</div>
+
+</div>
+<br>
+
+<!--get in touch area-->
+<div class="container-fluid" id="contact">
+		<div class="w3-content" style="max-width: 900px;"><br>
+			<h3 class="text-center w3-margin-top"><b>Get in touch</b></h3><br>
+			<form class="well w3-white">
+				<br>
+			<div class="row">
+
+				<div class="col-sm-5">
+			        <div class="form-group">
+			            <label>Your names:</label>
+			            <input type="text" name="names" class="w3-input">
+			        </div>
+			         <div class="form-group">
+			            <label>Email address:</label>
+			            <input type="email" name="names" class="w3-input">
+			        </div>  
+			    </div>
+			    <div class="col-sm-7">
+			    	<div class="form-group">
+		            <label>Your message:</label><br>
+		            <textarea rows="4" class="w3-input" style="margin-top: 12.9px;border-color:#8490ff;"></textarea>
+		        </div>
+
+			    </div>
+
+			</div>
+			    <button class="btn btn-sm btn-primary" style="">Send message</button>&nbsp <button class="btn btn-sm btn-danger" style="margin-left: 14px;">Reset</button>
+			</form>
+			</div>
+			
+		</div>
+		 <a href="#myPage" title="To Top" style="float: right;">
+    <button class="btn btn-sm btn-danger w3-card-8"><i class="fa fa-arrow-up"></i></button>
+  </a><br><br>
+
+<!--footer section-->
+<footer class="container-fluid" style="background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);">
+	<div class="row w3-content" style="max-width: 1000px;"><br>
+    
+    <div class="col-sm-3 col-xs-6 text-center" style="color:white;">
+        <span><img src="images/cellphone.png"  width="20px" height="20px" alt="logo-icon" style="margin-top:-10px; "> +254 705558801 / 790558088</span>
+    </div>
+    <div class="col-sm-3 col-xs-6 text-center" style="color:white;">
+        <span><img src="images/telephone.png"  width="20px" height="20px" alt="logo-icon" style="margin-top:-6px; "> +254 (0)705558801</span>
+    </div>
+    <div class="col-sm-3 col-xs-6 text-center" style="color:white;">
+        <span><img src="images/mail.png"  width="20px" height="20px" alt="logo-icon" style="margin-top:-6px; "> Laikipiaweb@gmail.com</span>
+    </div>
+    <div class="col-sm-3 col-xs-6 text-center" style="color:white;">
+        <span><img src="images/location.png"  width="20px" height="20px" alt="logo-icon" style="margin-top:-6px; ">Nyahururu,Kenya</span>
+    </div><br><br>
+
+    <center><span style="color:white; font-size:14px;">&copyCopyright <span>Laikipia University QA Forum</span>: all rights maintained, designed and maintained by Laikipia management</span></center>
+</div>
+</footer>
+
+	<script>
+// Create some content
+
+//progress div script
+let bar = document.querySelector("#progress");
+window.addEventListener("scroll", () => {
+	$("#navigation").addClass("w3-card-2");
+	if(screen.availHeight<300){
+	$("#navigation").removeClass("w3-card-2");
+}
+let max = document.body.scrollHeight - innerHeight;
+bar.style.width = `${(pageYOffset / max) * 100}%`;
+});
+
+
+//scroller script
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, a[href='#myPage'],a[href='#about']").on('click', function(event) {
+
+  // Prevent default anchor click behavior
+  event.preventDefault();
+
+  // Store hash
+  var hash = this.hash;
+
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 900, function(){
+
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+    });
+  });
+})
+</script>
+</body>
+</html>

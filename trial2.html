@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question and Answer forum</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/w3v3.css">
+	<link rel="stylesheet" type="text/css" href="css/css/css/fontawesome-all.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/responsive-voice.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<style type="text/css">
+	
+	</style>
+	
+</head>
+<body>
+	<!--onclick="responsiveVoice.speak('Hello Stephen');"-->
+	<div class="w3-content w3-margin-top" style="max-width: 700px;">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Steve Question Chat Bot</h3>
+			</div>
+			<div class="panel-body">
+				<h3 id="questions">Questions will come in here</h3>
+				<form>
+					<div class="form-group">
+				<input type="text" name="answer" class="form-control" placeholder="answer in here">
+			</div>
+			</form>
+				<button class="btn btn-sm btn-primary" onclick="read()">Submit answer</button>
+			
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+	function read(){
+var questions=["Which is the capital city of Nairobi?","Who is the president of kenya?"];
+for(var x=0;x<questions.length;x++){
+readOutLoud(questions[x]);
+}
+
+function readOutLoud(message) {
+  var speech = new SpeechSynthesisUtterance();
+
+  // Set the text and voice attributes.
+  speech.text = message;
+ speech.volume = 12;
+	speech.rate = .7;
+	speech.pitch = 9;
+
+  window.speechSynthesis.speak(speech);
+}
+}
+	</script>
+</body>
+</html>

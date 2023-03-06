@@ -1,0 +1,169 @@
+body{
+	background-image: url('/images/banner/bgmain.png');
+}
+.navigationAdmin{
+  background-color: #0b78d1;
+}
+/**.navigation{
+	background-color: #0b78d1;
+  background-color: -webkit-linear-gradient(#2196f3,#0b78d1,#2196f3);
+  background-color: -o-linear-gradient(#2196f3,#0b78d1,#2196f3);
+  background-color: -moz-linear-gradient(#2196f3,#0b78d1,#2196f3);
+  background-color: linear-gradient(#2196f3,#0b78d1,#2196f3);
+}**/
+.footer{
+   background: #42a5f5;
+    background: -moz-linear-gradient(top,#42a5f5 0,#2196f3 100%);
+    background: -webkit-linear-gradient(top,#42a5f5 0,#2196f3 100%);
+    background: linear-gradient(to bottom,#42a5f5 0,#2196f3 100%);
+}
+.responsive-btn{
+	border:1px solid white;
+}
+.responsive-btn > span{
+	background-color:white;
+}
+.navbar-brand,#nav-links li a{
+	color:white;
+	padding-bottom: 7px;
+}
+#nav-links li a:hover{
+	background-color: transparent;
+  transition: 0.3s linear;
+	border-bottom: 1px solid white;
+}
+
+#nav-links li a:active{
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  font-size:23px;
+}
+
+.navbar-fixed-top .active a{
+  background-color: transparent !important;
+}
+.navbar-brand{
+ color:white !important;
+}
+.nav .open >a{
+    border-bottom: 1px solid white !important;
+}
+
+
+.logo-name{
+   display: none;
+}
+.deals >.panel-body>{
+  color:#0b78d1;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 780px) {
+    .logo-name{
+   display: block;
+}
+}
+#testimonials em{
+	color:gray;
+}
+#students p,#owners p{
+	color:#3c485c;
+}
+
+
+
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #0b78d1;
+  }
+  .carousel-indicators li {
+      border-color: #0b78d1;
+  }
+  .carousel-indicators li.active {
+      background-color: #0b78d1;
+  }
+  .social-links {
+ 
+  list-style: none;
+ 
+}
+.social-links li {
+  margin: 10px 15px 10px 0;
+  display: inline-block;
+  font-size: 18px;
+  background-color: white;
+  width:30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 3px;
+}
+.social-links li a {
+  color: #2196f3;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+  .slideanim {visibility:hidden;}
+  .slider {
+      animation-name: slider;
+      -webkit-animation-name: slider;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slider {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slider {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+  .descriptions > .col-sm-3> ul li{
+    color: gray;
+    list-style-type: none;
+  }
+
+ #deals-tab{
+   display: none;
+}
+#deals-tab2{
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+    #deals-tab{
+   display: block;
+}
+#deals-tab2{
+  display: none;
+}
+}
+
+#right-nav li a{
+  color:white;
+}
+#steve{
+  color:red;
+}
+
+  footer h4,p, ul li{
+  	color:white;
+  }

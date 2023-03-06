@@ -1,0 +1,82 @@
+.logo_title{
+	margin-top: -7px;
+}
+.help-btn{
+	margin-top: -7px;
+
+}
+.shopping{
+	margin-top: -8px;
+}
+.nav_wrapper{
+	margin-top: 5px;
+}
+
+#lists:hover{
+	border-bottom: 1px solid white;
+	line-height: 40px;
+}
+
+.banner{
+	margin-top: -18px;
+}
+
+.panel-heading{
+	background-color: #333;
+}
+.btn-learn{
+	outline:1px solid #20a6f9;
+	background-color:transparent;
+	border-radius: 53px;
+	color: #20a6f9;
+}
+.btn-learn:hover{
+color: #20a6f9;
+}
+
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+footer ul li{
+	list-style-type: none;
+	color: #87837f;
+	font-size: 13px;
+}
+footer ul li::before{
+	content: '>> ';
+
+	
+}
+footer h3,p{
+	color: #87837f;
+}
